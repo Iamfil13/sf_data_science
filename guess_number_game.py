@@ -3,18 +3,17 @@ import random
 # Фиксируем seed для воспроизводимости результатов.
 random.seed(50)
 
-def guess_number():
+def guess_number(target:int = 25):
     """
     Функция угадывает загаданное число с помощью бинарного поиска.
     
     Аргументы:
-    target (int) — загаданное число от 1 до 100.
+    target (int) — загаданное число, по умолчанию 25.
     
     Возвращает:
     int — количество попыток, за которое число было угадано.
     """
     low, high = 1, 100
-    target = random.randint(1, 100)
 
     attempts = 0
     
@@ -50,4 +49,5 @@ def evaluate_algorithm(n_trials=1000):
 
 # Оценка качества алгоритма
 average_attempts = evaluate_algorithm()
+print(f"Количество попыток, за которое число было угадано: {guess_number}")
 print(f"Среднее количество попыток: {average_attempts}")
